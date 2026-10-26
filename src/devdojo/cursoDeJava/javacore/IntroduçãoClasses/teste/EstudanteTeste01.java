@@ -1,6 +1,6 @@
-package devdojo.cursoDeJava.javacore.AIntroduçãoClasses.teste;
+package devdojo.cursoDeJava.javacore.IntroduçãoClasses.teste;
 
-import devdojo.cursoDeJava.javacore.AIntroduçãoClasses.dominio.Estudante;
+import devdojo.cursoDeJava.javacore.IntroduçãoClasses.dominio.Estudante;
 
 public class EstudanteTeste01 {
     public static void main(String[] args) {
