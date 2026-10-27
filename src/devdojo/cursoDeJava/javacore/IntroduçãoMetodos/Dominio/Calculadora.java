@@ -16,6 +16,14 @@ public class Calculadora {
     }
 
     public double divisao2(double numero1, double numero2) {
-        return 1;
+        if (numero1 == 0 || numero2 == 0) {
+            return 0;
+        }
+        return numero1 / numero2;
     }
+
+    public void alterarDoidNumeros(int num1, int num2) {
+        
+    }
+
 }
