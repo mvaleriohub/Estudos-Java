@@ -1,6 +1,7 @@
 package exerciciosExtras.SistemaDeContaBancaria;
 
 import exerciciosExtras.SistemaDeContaBancaria.domain.Account;
+import exerciciosExtras.SistemaDeContaBancaria.domain.Application;
 import exerciciosExtras.SistemaDeContaBancaria.domain.Deposit;
 import exerciciosExtras.SistemaDeContaBancaria.domain.Witdraw;
 
@@ -13,6 +14,7 @@ public class Manager {
 
         Deposit deposit = new Deposit();
         Witdraw witdraw = new Witdraw();
+        Application application = new Application();
         
         // Type of account
         byte type = 1;
@@ -26,6 +28,7 @@ public class Manager {
         double balance = account.balance;
         double witdrawalAmount = 100;
         double depositedAmount = 200;
+        int monthsApplication = 6;
 
 
         // make the deposit
@@ -40,5 +43,9 @@ public class Manager {
         if (witdrawalResult != -1) {
             balance = witdrawalResult;
         }
+
+        // make the application
+        double applicationResult = application.application(balance, monthsApplication);
+        balance = applicationResult;
     }
 }
