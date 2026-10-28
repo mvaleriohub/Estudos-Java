@@ -22,8 +22,13 @@ public class Calculadora {
         return numero1 / numero2;
     }
 
-    public void alterarDoidNumeros(int num1, int num2) {
-        
+    public void somaArray(int... numeros) {
+        int soma = 0;
+        for (int i : numeros) {
+            soma += i;
+        }
+
+        System.out.println(soma);
     }
 
 }
