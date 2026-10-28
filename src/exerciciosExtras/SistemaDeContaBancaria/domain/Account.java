@@ -2,5 +2,6 @@ package exerciciosExtras.SistemaDeContaBancaria.domain;
 
 public class Account {
     public String holder;
-    public int balance = 0;
+    public long accountNumber;
+    public double balance = 0.0;
 }
