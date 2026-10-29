@@ -1,23 +1,16 @@
-package exerciciosExtras.SistemaDeContaBancaria;
+package ExerciciosExtras.SistemaDeContaBancaria;
 
-import exerciciosExtras.SistemaDeContaBancaria.domain.Account;
-import exerciciosExtras.SistemaDeContaBancaria.domain.Application;
-import exerciciosExtras.SistemaDeContaBancaria.domain.Deposit;
-import exerciciosExtras.SistemaDeContaBancaria.domain.Witdraw;
+import ExerciciosExtras.SistemaDeContaBancaria.domain.Account;
 
 public class Manager {
     public static void main(String[] args) {
 
-        Account account = new Account();
+        Account account;
         Account checkingAccount = new Account();
         Account savingsAccount = new Account();
-
-        Deposit deposit = new Deposit();
-        Witdraw witdraw = new Witdraw();
-        Application application = new Application();
         
         // Type of account
-        byte type = 1;
+        byte type = 2;
         if (type == 1) {
             account = checkingAccount;
         } else {
@@ -25,27 +18,13 @@ public class Manager {
         }
         
         // define data
-        double balance = account.balance;
+        double depositedAmount = 500;
         double witdrawalAmount = 100;
-        double depositedAmount = 200;
         int monthsApplication = 6;
 
 
-        // make the deposit
-        double depositResult = deposit.deposit(depositedAmount, balance);
-        if (depositResult != -1) {
-            balance = depositResult;
-        }
-        
-
-        // make the witdraw
-        double witdrawalResult = witdraw.witdraw(type, balance, witdrawalAmount);
-        if (witdrawalResult != -1) {
-            balance = witdrawalResult;
-        }
-
-        // make the application
-        double applicationResult = application.application(balance, monthsApplication);
-        balance = applicationResult;
+        account.deposit(depositedAmount);
+        account.witdraw(type, witdrawalAmount);
+        account.application(monthsApplication);
     }
 }

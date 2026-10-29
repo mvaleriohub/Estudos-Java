@@ -1,4 +1,4 @@
-package exerciciosExtras;
+package ExerciciosExtras;
 import java.util.Scanner;
 
 public class SistemaDeGestãoDeNotasEscolares {

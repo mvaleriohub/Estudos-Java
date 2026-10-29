@@ -1,4 +1,4 @@
-package exerciciosExtras;
+package ExerciciosExtras;
 
 public class MotorDescisaoDeCredito {
     public static void main(String[] args) {
