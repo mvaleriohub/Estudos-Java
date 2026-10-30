@@ -10,9 +10,11 @@ public class Account {
             System.out.println("VALOR INVÁLIDO PARA DEPÓSITO");
             System.out.println("O valor digitado deve ser maior que zero (R$ 0,00).");
             System.out.println("Por favor, verifique o valor e tente novamente.");
+            return;
         }
         
         this.balance += depositedAmount;
+        System.out.println("==============================");
         System.out.println("DEPÓSITO REALIZADO COM SUCESSO!");
         System.out.println("Valor: R$ "+depositedAmount);
         System.out.println("Saldo Total: R$ "+balance);
@@ -30,13 +32,13 @@ public class Account {
             return;
         }
 
-        if (type == 1 && this.balance < witdrawalAmount + rate) {
+        if ((type == 1 && this.balance < witdrawalAmount + rate) || this.balance < witdrawalAmount) {
             System.out.println("Código de Erro 51 (Saldo Insuficiente)");
             return;
         }
 
         this.balance -= witdrawalAmount + rate;
-
+        System.out.println("==============================");
         System.out.println("SAQUE REALIZADO COM SUCESSO!");
         System.out.println("DETALHES DA OPERAÇÃO:");
         System.out.println("Valor do saque: R$ "+witdrawalAmount);
@@ -49,6 +51,7 @@ public class Account {
         
         double newBalance = this.balance * Math.pow((1 + yield), months);
 
+        System.out.println("==============================");
         System.out.println("VALOR ATUALIZADO EM SUA POUPANÇA!");
         System.out.println("Seu dinheiro trabalhou por você enquanto sua conta esteve guardada.");
         System.out.println("Valor aplicado: "+this.balance);
@@ -60,7 +63,6 @@ public class Account {
         this.balance = newBalance;
     }
 
-
     public double getBalance() {
         return this.balance;
     }
@@ -69,5 +71,9 @@ public class Account {
     }
     public long getAccountNumber() {
         return this.accountNumber;
+    }
+
+    public void setHolder(String holder) {
+        this.holder = holder;
     }
 }
